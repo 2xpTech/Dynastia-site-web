@@ -1,28 +1,45 @@
 ---
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-emerald-50">
+<section id="hero" class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-16">
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white"></div>
+  
+  <!-- Wavy gradient layers -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -inset-[100%] animate-wave opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#FAC140]/30 via-transparent to-transparent"></div>
+    </div>
+    <div class="absolute -inset-[100%] animate-wave-reverse opacity-20" style="animation-delay: 1s;">
+      <div class="absolute inset-0 bg-gradient-to-tl from-[#FAC140]/30 via-transparent to-transparent"></div>
+    </div>
+  </div>
+  
+  <!-- Floating orbs for additional depth -->
   <div class="absolute inset-0">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 4s;"></div>
+    <div class="absolute top-20 right-20 w-96 h-96 bg-[#FAC140]/25 rounded-full filter blur-[100px] animate-float"></div>
+    <div class="absolute bottom-20 left-20 w-80 h-80 bg-[#FAC140]/20 rounded-full filter blur-[80px] animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 right-1/3 w-64 h-64 bg-[#2DC3E9]/15 rounded-full filter blur-[60px] animate-float" style="animation-delay: 4s;"></div>
   </div>
   
   <div class="relative z-10 max-w-7xl mx-auto text-center animate-fadeInUp">
-    <div class="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full mb-8">
+    <div class="inline-flex items-center gap-2 bg-[#FAC140]/20 px-4 py-2 rounded-lg mb-8">
       <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-purple-600"></span>
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FAC140] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#EAB130]"></span>
       </span>
-      <span class="text-sm font-medium text-purple-900">Quebec's Leading AI Incubator</span>
+      <span class="text-sm font-medium text-gray-700">Quebec's Leading AI Incubator</span>
     </div>
     
-    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-      <span class="block text-gray-900">Unlock Your</span>
-      <span class="block gradient-text">Funding Potential</span>
+    <h1 class="font-bold mb-6 leading-tight relative">
+      <span class="block text-gray-900 text-3xl sm:text-4xl lg:text-5xl">Unlock Your</span>
+      <span class="inline-block relative text-5xl sm:text-6xl lg:text-7xl">
+        <span class="gradient-text">Funding Potential</span>
+        <span class="absolute -bottom-3 left-0 h-1 bg-gradient-to-r from-[#FAC140] to-[#EAB130] animate-underline-slide"></span>
+      </span>
     </h1>
     
-    <p class="text-xl sm:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
+    <p class="text-xl sm:text-2xl text-gray-900 mb-10 max-w-3xl mx-auto">
       Navigate grants and secure funding with AI-powered precision. 
       We help Quebec businesses access millions in available funding.
     </p>
@@ -30,13 +47,13 @@
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
       <a 
         href="#contact" 
-        class="gradient-bg text-white font-semibold px-8 py-4 rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+        class="gradient-bg text-white font-semibold px-8 py-4 rounded-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
       >
         Get Started Free →
       </a>
       <a 
         href="#process" 
-        class="bg-white text-gray-900 font-semibold px-8 py-4 rounded-xl border-2 border-gray-200 hover:border-purple-300 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+        class="bg-white text-gray-900 font-semibold px-8 py-4 rounded-md border-2 border-gray-300 hover:border-[#2DC3E9]/50 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
       >
         Watch Demo
       </a>
@@ -58,12 +75,36 @@
     </div>
     
     <div class="mt-16">
-      <p class="text-xs text-gray-500 mb-4">TRUSTED BY LEADING QUEBEC BUSINESSES</p>
-      <div class="flex justify-center items-center gap-8 opacity-50 grayscale">
-        <div class="text-lg font-bold text-gray-400">TechCo</div>
-        <div class="text-lg font-bold text-gray-400">BioLab</div>
-        <div class="text-lg font-bold text-gray-400">GreenTech</div>
-        <div class="text-lg font-bold text-gray-400">InnovateMTL</div>
+      <p class="text-xs text-gray-500 mb-4">TRUSTED BY 200+ LEADING QUEBEC BUSINESSES</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+        <!-- Tech Company -->
+        <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+          <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+          <span class="text-lg font-semibold text-gray-600">TechNova</span>
+        </div>
+        <!-- Biotech Company -->
+        <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+          <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.8 18.4L14 10.67V6.5l1.35-1.69c.26-.33.03-.81-.39-.81H9.04c-.42 0-.65.48-.39.81L10 6.5v4.17L4.2 18.4c-.49.66-.02 1.6.8 1.6h14c.82 0 1.29-.94.8-1.6z"/>
+          </svg>
+          <span class="text-lg font-semibold text-gray-600">BioLab Pro</span>
+        </div>
+        <!-- Green Energy -->
+        <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+          <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-lg font-semibold text-gray-600">EcoSpark</span>
+        </div>
+        <!-- Innovation Hub -->
+        <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+          <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+          </svg>
+          <span class="text-lg font-semibold text-gray-600">InnovateMTL</span>
+        </div>
       </div>
     </div>
   </div>

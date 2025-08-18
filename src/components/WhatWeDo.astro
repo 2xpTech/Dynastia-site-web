@@ -7,7 +7,7 @@ const services = [
     title: "Grant Discovery",
     description: "AI-powered matching to identify the perfect funding opportunities for your business profile.",
     features: ["Smart matching algorithm", "Real-time opportunities", "Eligibility checker"],
-    color: "purple"
+    color: "yellow"
   },
   {
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@ const services = [
     title: "Application Support",
     description: "Expert guidance through complex application processes with proven success strategies.",
     features: ["Document preparation", "Compliance review", "Success optimization"],
-    color: "emerald"
+    color: "cyan"
   },
   {
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -25,17 +25,17 @@ const services = [
     title: "Growth Strategy",
     description: "Strategic consulting to maximize your funding impact and accelerate business growth.",
     features: ["Growth roadmap", "KPI tracking", "Quarterly reviews"],
-    color: "amber"
+    color: "yellow"
   }
 ];
 ---
 
-<section id="what-we-do" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+<section id="what-we-do" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">What We Do</span>
-      <h2 class="text-4xl sm:text-5xl font-black mt-2 mb-4">
-        Everything You Need to <span class="gradient-text">Succeed</span>
+      <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">What We Do</span>
+      <h2 class="text-4xl sm:text-5xl font-black mt-2 mb-4 text-gray-900">
+        Everything You Need to Succeed
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Comprehensive support at every stage of your funding journey
@@ -44,8 +44,8 @@ const services = [
     
     <div class="grid md:grid-cols-3 gap-8">
       {services.map((service) => (
-        <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-purple-200 hover:shadow-xl transition-all duration-300 group">
-          <div class={`w-14 h-14 rounded-xl bg-${service.color}-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+        <div class="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 group">
+          <div class={`w-14 h-14 rounded-md bg-${service.color}-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
             <div class={`text-${service.color}-600`}>
               <Fragment set:html={service.icon} />
             </div>
@@ -57,7 +57,7 @@ const services = [
           <ul class="space-y-3">
             {service.features.map((feature) => (
               <li class="flex items-center text-sm text-gray-700">
-                <svg class="w-5 h-5 mr-3 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 mr-3 text-[#2DC3E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
                 {feature}
@@ -65,7 +65,7 @@ const services = [
             ))}
           </ul>
           
-          <a href="#contact" class="inline-flex items-center mt-6 text-purple-600 font-semibold hover:text-purple-700 group">
+          <a href="#contact" class="inline-flex items-center mt-6 text-[#FAC140] font-semibold hover:text-[#EAB130] group">
             Learn more 
             <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

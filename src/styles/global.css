@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #5B21B6;
-  --color-primary-light: #7C3AED;
-  --color-secondary: #10B981;
-  --color-accent: #F59E0B;
-  --color-dark: #111827;
+  --color-primary: #FAC140;
+  --color-primary-light: #FBD068;
+  --color-primary-dark: #EAB130;
+  --color-accent: #2DC3E9;
+  --color-accent-light: #5DD0F0;
+  --color-accent-dark: #1BA8CE;
+  --color-dark: #0F172A;
+  --color-dark-lighter: #1E293B;
   --color-gray: #6B7280;
   --color-light-gray: #F3F4F6;
   --color-white: #FFFFFF;
@@ -16,11 +19,23 @@ html {
 }
 
 body {
+  font-family: 'Merriweather', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+.font-heading {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.font-body {
+  font-family: 'Merriweather', serif;
+}
+
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, #374151 0%, #6B7280 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -64,4 +79,50 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) rotate(2deg) scale(1.05);
+  }
+}
+
+@keyframes wave-reverse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(30px) rotate(-2deg) scale(1.05);
+  }
+}
+
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-wave-reverse {
+  animation: wave-reverse 8s ease-in-out infinite;
+}
+
+@keyframes underline-slide {
+  0% {
+    width: 2px;
+    transform: translateX(-100vw);
+  }
+  40% {
+    width: 2px;
+    transform: translateX(0);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+
+.animate-underline-slide {
+  animation: underline-slide 1.5s ease-out;
+  animation-fill-mode: forwards;
 }
