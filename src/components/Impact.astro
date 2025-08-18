@@ -41,13 +41,6 @@ const stats = [
     icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>` 
-  },
-  { 
-    value: "4.9/5", 
-    label: "Client Rating", 
-    icon: `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-    </svg>` 
   }
 ];
 ---
@@ -64,7 +57,7 @@ const stats = [
       </p>
     </div>
     
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
       {stats.map((stat) => (
         <div class="bg-gradient-to-br from-yellow-50 to-cyan-50 rounded-lg p-6 text-center">
           <div class="flex justify-center mb-3 text-[#FAC140]">

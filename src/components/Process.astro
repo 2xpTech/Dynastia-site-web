@@ -2,39 +2,39 @@
 const steps = [
   {
     number: "1",
-    title: "Discovery Call",
-    description: "15-minute call to understand your business needs and funding goals",
+    title: "Discovery & Data Collection",
+    description: "We start with streamlined interviews and online templates to quickly capture the technical and financial details of your projects. This saves you time and ensures we gather only what's relevant.",
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-    </svg>`,
-    time: "Day 1"
-  },
-  {
-    number: "2",
-    title: "AI Analysis",
-    description: "Our AI scans 500+ programs to find your perfect matches",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-    </svg>`,
-    time: "Day 2-3"
-  },
-  {
-    number: "3",
-    title: "Strategy Session",
-    description: "Personalized funding roadmap and application strategy",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
     </svg>`,
     time: "Week 1"
   },
   {
-    number: "4",
-    title: "Application Support",
-    description: "Hands-on help with applications and ongoing optimization",
+    number: "2",
+    title: "Continuous Data Tracking",
+    description: "We help you set up ongoing data collection throughout the year. This doubles the strength of your claims, increases eligible expenses, and prevents issues during audits.",
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
     </svg>`,
     time: "Ongoing"
+  },
+  {
+    number: "3",
+    title: "Optimization & Strategy",
+    description: "Using our technical and fiscal expertise, we analyze your information to maximize RS&DE, CDAE, and other credits. We run simulations, spot additional grants, and prepare rock-solid documentation for every claim.",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+    </svg>`,
+    time: "Monthly"
+  },
+  {
+    number: "4",
+    title: "Defense & Ongoing Support",
+    description: "From filing to audits, we're by your side. Our proven track record (99.25% success rate) means we defend your claims effectively and provide year-round guidance to secure your results.",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+    </svg>`,
+    time: "Year-round"
   }
 ];
 ---
@@ -51,37 +51,36 @@ const steps = [
       </p>
     </div>
     
-    <div class="relative">
-      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-[#FAC140] to-[#2DC3E9]"></div>
-      
-      <div class="space-y-12 md:space-y-16">
-        {steps.map((step, index) => (
-          <div class={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-            <div class={`flex-1 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-              <div class={`bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <div class={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div class="w-12 h-12 rounded-md bg-[#FAC140]/20 flex items-center justify-center text-[#EAB130]">
-                    <Fragment set:html={step.icon} />
-                  </div>
-                  <div>
-                    <h3 class="text-2xl font-bold text-gray-900">{step.title}</h3>
-                    <span class="text-sm text-[#FAC140] font-semibold">{step.time}</span>
-                  </div>
-                </div>
-                <p class="text-gray-600">{step.description}</p>
-              </div>
-            </div>
-            
-            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FAC140] to-[#2DC3E9] flex items-center justify-center text-white font-bold shadow-lg">
-                {step.number}
-              </div>
-            </div>
-            
-            <div class={`flex-1 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}></div>
+    <div class="grid md:grid-cols-2 gap-8">
+      {steps.map((step, index) => (
+        <div class="relative bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-[#FAC140] hover:shadow-xl transition-all duration-300 group">
+          {/* Step number badge */}
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#FAC140] to-[#EAB130] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">
+            {step.number}
           </div>
-        ))}
-      </div>
+          
+          {/* Icon and timing */}
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-[#FAC140]/10 rounded-lg flex items-center justify-center text-[#FAC140] group-hover:scale-110 transition-transform duration-300">
+              <Fragment set:html={step.icon} />
+            </div>
+            <span class="text-xs font-bold text-[#FAC140] bg-[#FAC140]/10 px-3 py-1 rounded-full uppercase tracking-wide">
+              {step.time}
+            </span>
+          </div>
+          
+          {/* Content */}
+          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#FAC140] transition-colors">
+            {step.title}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {step.description}
+          </p>
+          
+          {/* Decorative corner */}
+          <div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent via-[#FAC140]/5 to-[#FAC140]/10 rounded-tl-lg"></div>
+        </div>
+      ))}
     </div>
     
     <div class="mt-16 text-center">
