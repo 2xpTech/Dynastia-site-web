@@ -1,70 +1,137 @@
 ---
-const programs = [
-  { name: "PARI", fullName: "Programme d'aide à la recherche industrielle", amount: "10M$", category: "Fédéral" },
-  { name: "RS&DE", fullName: "Recherche scientifique et développement expérimental", amount: "5M$", category: "Fédéral" },
-  { name: "PCAN", fullName: "Programme canadien d'adoption du numérique", amount: "15K$", category: "Fédéral" },
-  { name: "IQ", fullName: "Investissement Québec", amount: "25M$", category: "Provincial" },
-  { name: "ESSOR", fullName: "Programme de croissance d'entreprise", amount: "1M$", category: "Provincial" },
-  { name: "MITACS", fullName: "Partenariats de recherche", amount: "50K$", category: "Fédéral" },
+const coaches = [
+  {
+    name: "Julie Tremblay",
+    title: "Experte Financement",
+    description: "20+ ans d'expérience en levées de fonds pour PME et scale-ups.",
+    initials: "JT",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Marc-André Dubois",
+    title: "Stratège Marketing",
+    description: "Ancien CMO chez BioTech Inc, spécialiste en acquisition clients B2B.",
+    initials: "MD",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Sophie Chen",
+    title: "Coach Agile",
+    description: "Certifiée Scrum Master, transformation digitale de 50+ entreprises.",
+    initials: "SC",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Pierre Lavoie",
+    title: "Expert Tech",
+    description: "CTO en série, architecte de solutions scalables pour startups.",
+    initials: "PL",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Amélie Rousseau",
+    title: "Conseillère RH",
+    description: "Bâtisseuse d'équipes performantes, expertise en culture startup.",
+    initials: "AR",
+    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop"
+  },
+  {
+    name: "David Martin",
+    title: "Mentor Ventes",
+    description: "VP Sales Fortune 500, expert en stratégies de croissance rapide.",
+    initials: "DM",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Isabelle Gagnon",
+    title: "Experte Produit",
+    description: "Product Manager senior, lancement de 20+ produits SaaS réussis.",
+    initials: "IG",
+    image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=400&h=400&fit=crop"
+  },
+  {
+    name: "François Bergeron",
+    title: "Investisseur Angel",
+    description: "Portfolio de 30+ startups, expertise en pitch et négociation.",
+    initials: "FB",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Marie-Claude Roy",
+    title: "Coach Leadership",
+    description: "Développement de dirigeants, transformation organisationnelle.",
+    initials: "MR",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop"
+  },
+  {
+    name: "Alexandre Côté",
+    title: "Expert Croissance",
+    description: "Growth hacker, spécialiste en acquisition et rétention utilisateurs.",
+    initials: "AC",
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop"
+  }
 ];
-
-const categories = {
-  Fédéral: "bg-blue-100 text-blue-700",
-  Provincial: "bg-green-100 text-green-700"
-};
 ---
 
 <section id="programs" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Programmes de Subventions</span>
+      <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Nos Coachs</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
-        Jusqu'à 25K$ de Crédit d'Impôt par Employé pour les Firmes Logicielles
+        Un réseau d'experts pour vous guider à chaque étape
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Nous vous aidons à naviguer les programmes de financement les plus précieux du Québec et du Canada
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+        Nos coachs sont des entrepreneurs, investisseurs et spécialistes qui ont déjà surmonté les défis que vous vivez aujourd'hui. 
+        Avec plus de 20 ans d'expérience chacun dans le développement des PME, ils offrent une expertise pratique et un accompagnement 
+        concret pour accélérer votre croissance.
       </p>
     </div>
     
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {programs.map((program) => (
-        <div class="bg-white rounded-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 group">
-          <div class="flex items-start justify-between mb-4">
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-1">{program.name}</h3>
-              <p class="text-sm text-gray-600">{program.fullName}</p>
+    {/* Scrollable container */}
+    <div class="relative">
+      <div class="overflow-x-auto scrollbar-hide pb-4">
+        <div class="flex gap-6 w-max">
+          {coaches.map((coach) => (
+            <div class="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 group flex-shrink-0 w-64">
+              {/* Professional headshot */}
+              <div class="w-20 h-20 mx-auto mb-4 overflow-hidden rounded-full group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src={coach.image} 
+                  alt={coach.name}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Coach info */}
+              <div class="text-center">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">{coach.name}</h3>
+                <p class="text-sm font-semibold text-[#FAC140] mb-2">{coach.title}</p>
+                <p class="text-xs text-gray-600 leading-relaxed">{coach.description}</p>
+              </div>
             </div>
-            <span class={`px-2 py-1 rounded-lg text-xs font-semibold ${categories[program.category]}`}>
-              {program.category}
-            </span>
-          </div>
-          
-          <div class="flex items-baseline gap-1 mb-4">
-            <span class="text-sm text-gray-500">Jusqu'à</span>
-            <span class="text-2xl font-bold text-[#FAC140]">{program.amount}</span>
-          </div>
-          
-          <div class="pt-4 border-t border-gray-100">
-            <a href="#contact" class="text-sm font-semibold text-[#FAC140] hover:text-[#EAB130] inline-flex items-center group">
-              Vérifier l'admissibilité
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
+      
+      {/* Scroll indicators */}
+      <div class="flex justify-center gap-2 mt-6">
+        {coaches.map((_, index) => (
+          <button 
+            class={`h-1 rounded-full transition-all duration-300 ${index === 0 ? 'w-8 bg-[#FAC140]' : 'w-4 bg-gray-300 hover:bg-gray-400'}`}
+            aria-label={`Go to coach ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
     
-    <div class="mt-12 text-center">
-      <div class="inline-flex items-center gap-4 bg-[#FAC140]/10 px-6 py-4 rounded-md">
-        <svg class="w-6 h-6 text-[#FAC140]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <p class="text-gray-700">
-          <span class="font-semibold">20+ autres programmes disponibles.</span> Réservez une consultation pour explorer toutes les options.
-        </p>
-      </div>
+    
+    <div class="mt-16 text-center">
+      <a 
+        href="#contact" 
+        class="gradient-bg text-white font-semibold px-8 py-4 rounded-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block"
+      >
+        Rejoindre la cohorte →
+      </a>
     </div>
   </div>
 </section>
