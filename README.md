@@ -1,43 +1,72 @@
-# Astro Starter Kit: Minimal
+# Dynastia - AI Startup Accelerator
 
-```sh
-npm create astro@latest -- --template minimal
+Site web pour Dynastia, un accélérateur de startups basé au Québec spécialisé dans l'accompagnement et la croissance des entreprises innovantes.
+
+## 🚀 Aperçu
+
+Dynastia est une plateforme d'accélération qui aide les startups à multiplier leurs revenus grâce à un accompagnement personnalisé, des programmes de financement et un réseau d'experts.
+
+## 🛠️ Technologies
+
+- **Astro** - Framework de site statique
+- **Tailwind CSS** - Stylisation utility-first
+- **TypeScript** - Typage statique
+- **JavaScript** - Interactivité
+
+## 📦 Installation
+
+```bash
+# Cloner le repository
+git clone https://github.com/joshveill/Dynastia.git
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🧞 Commandes
 
-## 🚀 Project Structure
+| Commande | Action |
+|----------|--------|
+| `npm install` | Installer les dépendances |
+| `npm run dev` | Démarrer le serveur local à `localhost:4321` |
+| `npm run build` | Construire le site pour production dans `./dist/` |
+| `npm run preview` | Prévisualiser le build localement |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Structure du Projet
 
-```text
+```
 /
-├── public/
+├── public/          # Assets statiques
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/  # Composants Astro
+│   ├── layouts/     # Layouts de page
+│   ├── pages/       # Pages du site
+│   └── styles/      # Styles globaux
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🌟 Fonctionnalités
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Design responsive et moderne
+- Sections pour services, coachs, témoignages
+- Formulaire de contact intégré avec Calendly
+- Animations fluides et scroll-based
+- Support multilingue (Français)
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚀 Déploiement GitHub Pages
 
-## 🧞 Commands
+Ce projet est configuré pour être déployé automatiquement sur GitHub Pages.
 
-All commands are run from the root of the project, from a terminal:
+### Configuration requise:
+1. Dans les paramètres du repository GitHub, aller dans **Settings > Pages**
+2. Sous **Source**, sélectionner **GitHub Actions**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Le site sera automatiquement déployé à chaque push sur la branche `main` à l'adresse:
+`https://[votre-username].github.io/Dynastia/`
 
-## 👀 Want to learn more?
+## 📄 License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2024 Dynastia. Tous droits réservés.
