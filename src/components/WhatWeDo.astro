@@ -1,30 +1,45 @@
 ---
 const services = [
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-    </svg>`,
-    title: "Découverte de Subventions",
-    description: "Correspondance alimentée par l'IA pour identifier les opportunités de financement parfaites pour votre profil d'entreprise.",
-    features: ["Algorithme de correspondance intelligent", "Opportunités en temps réel", "Vérificateur d'admissibilité"],
+    emoji: "🚀",
+    title: "MVP",
+    description: "Construire rapidement votre produit minimum viable et valider votre marché.",
     color: "yellow"
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-    </svg>`,
-    title: "Support aux Demandes",
-    description: "Accompagnement expert à travers les processus de demande complexes avec des stratégies de succès éprouvées.",
-    features: ["Préparation de documents", "Revue de conformité", "Optimisation du succès"],
+    emoji: "👥",
+    title: "Équipe",
+    description: "Former, structurer et mobiliser une équipe gagnante.",
     color: "cyan"
   },
   {
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-    </svg>`,
-    title: "Stratégie de Croissance",
-    description: "Consultation stratégique pour maximiser l'impact de votre financement et accélérer la croissance de votre entreprise.",
-    features: ["Feuille de route de croissance", "Suivi des KPI", "Revues trimestrielles"],
+    emoji: "💰",
+    title: "Modèle de revenu",
+    description: "Définir et tester des modèles d'affaires évolutifs.",
+    color: "yellow"
+  },
+  {
+    emoji: "🔄",
+    title: "Agile",
+    description: "Implanter une culture d'agilité et d'itération rapide.",
+    color: "cyan"
+  },
+  {
+    emoji: "📣",
+    title: "Marketing",
+    description: "Positionner votre startup et acquérir vos premiers clients.",
+    color: "yellow"
+  },
+  {
+    emoji: "💸",
+    title: "Subventions & Financement",
+    description: "Accéder aux capitaux publics et privés pour propulser votre croissance.",
+    color: "cyan"
+  },
+  {
+    emoji: "🎯",
+    title: "Compétences transversales",
+    description: "Développer les aptitudes essentielles : leadership, pitch, négociation, mindset.",
     color: "yellow"
   }
 ];
@@ -42,56 +57,17 @@ const services = [
       </p>
     </div>
     
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
       {services.map((service, index) => (
-        <div class="relative bg-gradient-to-br from-white to-gray-50 rounded-lg p-8 border border-gray-200 hover:border-[#FAC140]/50 shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden">
-          {/* Background decoration */}
-          <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-[#FAC140]/10 to-[#2DC3E9]/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+        <div class="relative bg-white rounded-lg p-6 border border-gray-200 hover:border-[#FAC140]/50 shadow-md hover:shadow-xl transition-all duration-300 group">
+          {/* Emoji icon */}
+          <div class="text-4xl mb-4">{service.emoji}</div>
           
-          {/* Icon with animated background */}
-          <div class="relative mb-6">
-            <div class={`absolute inset-0 w-16 h-16 bg-gradient-to-br from-[#FAC140]/20 to-[#2DC3E9]/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500`}></div>
-            <div class={`relative w-16 h-16 bg-gradient-to-br ${service.color === 'yellow' ? 'from-[#FAC140] to-[#EAB130]' : 'from-[#2DC3E9] to-[#1BA8CE]'} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-              <div class="text-white">
-                <Fragment set:html={service.icon} />
-              </div>
-            </div>
-          </div>
+          <h3 class="text-xl font-bold mb-2 text-gray-900 group-hover:text-[#FAC140] transition-colors duration-300">{service.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{service.description}</p>
           
-          <h3 class="text-2xl font-bold mb-3 text-gray-900 group-hover:text-[#FAC140] transition-colors duration-300">{service.title}</h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-          
-          {/* Features with staggered animation */}
-          <ul class="space-y-3 mb-6">
-            {service.features.map((feature, featureIndex) => (
-              <li class={`flex items-center text-sm text-gray-700 transition-all duration-500 group-hover:translate-x-2`} style={`transition-delay: ${featureIndex * 50}ms`}>
-                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-[#FAC140]/20 to-[#2DC3E9]/20 flex items-center justify-center mr-3 flex-shrink-0">
-                  <svg class="w-3 h-3 text-[#FAC140]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                {feature}
-              </li>
-            ))}
-          </ul>
-          
-          {/* CTA with animated arrow */}
-          <div class="mt-8">
-            <a href="#contact" class="inline-flex items-center text-[#FAC140] font-bold hover:text-[#EAB130] group/link">
-              <span class="relative">
-                En savoir plus
-                <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#FAC140] group-hover/link:w-full transition-all duration-300"></span>
-              </span>
-              <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-          </div>
-          
-          {/* Card number badge */}
-          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-br from-[#FAC140]/10 to-[#2DC3E9]/10 flex items-center justify-center">
-            <span class="text-xs font-bold text-gray-400">0{index + 1}</span>
-          </div>
+          {/* Subtle accent bar at bottom */}
+          <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color === 'yellow' ? 'from-[#FAC140] to-[#EAB130]' : 'from-[#2DC3E9] to-[#1BA8CE]'} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-lg`}></div>
         </div>
       ))}
     </div>
