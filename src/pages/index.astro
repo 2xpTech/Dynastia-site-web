@@ -8,6 +8,9 @@ import Impact from '../components/Impact.astro';
 import Process from '../components/Process.astro';
 import Contact from '../components/Contact.astro';
 import '../styles/global.css';
+
+const base = import.meta.env.BASE_URL || '';
+const logoPath = base ? `${base}/assetlogo.svg` : '/assetlogo.svg';
 ---
 
 <BaseLayout>
@@ -25,7 +28,7 @@ import '../styles/global.css';
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-6 md:mb-0">
-          <img src={`${import.meta.env.BASE_URL}assetlogo.svg`} alt="Dynastia Logo" class="h-10 w-auto mb-2" />
+          <img src={logoPath} alt="Dynastia Logo" class="h-10 w-auto mb-2" />
           <p class="text-sm text-gray-600">AI-Powered Funding Solutions</p>
         </div>
         
