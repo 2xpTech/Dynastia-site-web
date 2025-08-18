@@ -1,0 +1,70 @@
+---
+const programs = [
+  { name: "IRAP", fullName: "Industrial Research Assistance Program", amount: "$10M", category: "Federal" },
+  { name: "SR&ED", fullName: "Scientific Research & Development", amount: "$5M", category: "Federal" },
+  { name: "CDAP", fullName: "Canada Digital Adoption Program", amount: "$15K", category: "Federal" },
+  { name: "IQ", fullName: "Investissement Québec", amount: "$25M", category: "Provincial" },
+  { name: "ESSOR", fullName: "Business Growth Program", amount: "$1M", category: "Provincial" },
+  { name: "MITACS", fullName: "Research Partnerships", amount: "$50K", category: "Federal" },
+];
+
+const categories = {
+  Federal: "bg-blue-100 text-blue-700",
+  Provincial: "bg-green-100 text-green-700"
+};
+---
+
+<section id="programs" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="text-purple-600 font-semibold text-sm uppercase tracking-wider">Grant Programs</span>
+      <h2 class="text-4xl sm:text-5xl font-black mt-2 mb-4">
+        Access <span class="gradient-text">$100M+ in Funding</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        We help you navigate Quebec and Canada's most valuable funding programs
+      </p>
+    </div>
+    
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {programs.map((program) => (
+        <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-1">{program.name}</h3>
+              <p class="text-sm text-gray-600">{program.fullName}</p>
+            </div>
+            <span class={`px-2 py-1 rounded-full text-xs font-semibold ${categories[program.category]}`}>
+              {program.category}
+            </span>
+          </div>
+          
+          <div class="flex items-baseline gap-1 mb-4">
+            <span class="text-sm text-gray-500">Up to</span>
+            <span class="text-2xl font-bold text-purple-600">{program.amount}</span>
+          </div>
+          
+          <div class="pt-4 border-t border-gray-100">
+            <a href="#contact" class="text-sm font-semibold text-purple-600 hover:text-purple-700 inline-flex items-center group">
+              Check eligibility
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <div class="inline-flex items-center gap-4 bg-purple-50 px-6 py-4 rounded-xl">
+        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <p class="text-gray-700">
+          <span class="font-semibold">20+ more programs available.</span> Book a consultation to explore all options.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
