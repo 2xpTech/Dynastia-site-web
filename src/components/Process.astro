@@ -162,6 +162,7 @@ const pillars = [
     
     // Function to handle scroll-based activation
     function handleScrollActivation() {
+      if (!pillarsContainer) return;
       const containerRect = pillarsContainer.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
       
@@ -205,13 +206,15 @@ const pillars = [
         handleScrollActivation(); // Initial check
         
         // Also keep hover functionality for desktop with mouse
-        if (!isTouchDevice && !isSmallScreen) {
+        if (!isTouchDevice && !isSmallScreen && pillarsContainer) {
           pillarsContainer.classList.add('hover-enabled');
         }
       } else {
         // On desktop, restore hover-only behavior
         window.removeEventListener('scroll', handleScrollActivation);
-        pillarsContainer.classList.add('hover-enabled');
+        if (pillarsContainer) {
+          pillarsContainer.classList.add('hover-enabled');
+        }
       }
     }
     
