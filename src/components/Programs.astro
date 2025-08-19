@@ -1,73 +1,40 @@
 ---
+const base = import.meta.env.BASE_URL || '';
+
 const coaches = [
   {
-    name: "Julie Tremblay",
-    title: "Experte Financement",
-    description: "20+ ans d'expérience en levées de fonds pour PME et scale-ups.",
-    initials: "JT",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+    name: "Alexandre Émond",
+    title: "Expert en financement technologique et crédits d'impôt",
+    description: "Expert en financement technologique et crédits d'impôt",
+    initials: "AE",
+    image: base ? `${base}/images/coaches/alexandre-emond.jpeg` : "/images/coaches/alexandre-emond.jpeg"
   },
   {
-    name: "Marc-André Dubois",
-    title: "Stratège Marketing",
-    description: "Ancien CMO chez BioTech Inc, spécialiste en acquisition clients B2B.",
-    initials: "MD",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Sophie Chen",
-    title: "Coach Agile",
-    description: "Certifiée Scrum Master, transformation digitale de 50+ entreprises.",
-    initials: "SC",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Pierre Lavoie",
-    title: "Expert Tech",
-    description: "CTO en série, architecte de solutions scalables pour startups.",
-    initials: "PL",
+    name: "Mathieu Vernet",
+    title: "Coach en stratégie, innovation et excellence opérationnelle",
+    description: "Coach en stratégie, innovation et excellence opérationnelle",
+    initials: "MV",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
   },
   {
-    name: "Amélie Rousseau",
-    title: "Conseillère RH",
-    description: "Bâtisseuse d'équipes performantes, expertise en culture startup.",
-    initials: "AR",
-    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop"
-  },
-  {
-    name: "David Martin",
-    title: "Mentor Ventes",
-    description: "VP Sales Fortune 500, expert en stratégies de croissance rapide.",
-    initials: "DM",
+    name: "Alain Chagnon",
+    title: "Consultant TI et expert en systèmes de gestion d'entreprise",
+    description: "Consultant TI et expert en systèmes de gestion d'entreprise",
+    initials: "AC",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
   },
   {
-    name: "Isabelle Gagnon",
-    title: "Experte Produit",
-    description: "Product Manager senior, lancement de 20+ produits SaaS réussis.",
-    initials: "IG",
-    image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=400&h=400&fit=crop"
-  },
-  {
-    name: "François Bergeron",
-    title: "Investisseur Angel",
-    description: "Portfolio de 30+ startups, expertise en pitch et négociation.",
-    initials: "FB",
+    name: "Alain Castonguay",
+    title: "Coach stratégique en organisation et leadership",
+    description: "Coach stratégique en organisation et leadership",
+    initials: "AC",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
   },
   {
-    name: "Marie-Claude Roy",
-    title: "Coach Leadership",
-    description: "Développement de dirigeants, transformation organisationnelle.",
-    initials: "MR",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop"
-  },
-  {
-    name: "Alexandre Côté",
-    title: "Expert Croissance",
-    description: "Growth hacker, spécialiste en acquisition et rétention utilisateurs.",
-    initials: "AC",
+    name: "Steve Moisan",
+    title: "Spécialiste senior en gestion de subventions et crédits RS&DE",
+    description: "Spécialiste senior en gestion de subventions et crédits RS&DE",
+    initials: "SM",
     image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop"
   }
 ];
@@ -77,7 +44,7 @@ const coachesPerPage = 4;
 const totalPages = Math.ceil(coaches.length / coachesPerPage);
 ---
 
-<section id="programs" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+<section id="programs" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto">
     <div class="text-left mb-16">
       <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Nos Coachs</span>
