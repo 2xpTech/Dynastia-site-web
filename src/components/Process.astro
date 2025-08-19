@@ -1,40 +1,49 @@
 ---
-const steps = [
+const pillars = [
   {
     number: "1",
-    title: "Découverte & Collecte de Données",
-    description: "Nous commençons par des entrevues simplifiées et des modèles en ligne pour capturer rapidement les détails techniques et financiers de vos projets. Cela vous fait gagner du temps et garantit que nous recueillons uniquement ce qui est pertinent.",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+    title: "Cohortes",
+    description: "Rejoignez des groupes dynamiques d'entrepreneurs qui partagent vos défis. Ensemble, vous progressez plus vite grâce à l'entraide et aux échanges d'expérience.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
     </svg>`,
-    time: "Semaine 1"
+    color: "from-[#FAC140] to-[#EAB130]"
   },
   {
     number: "2",
-    title: "Suivi de Données Continu",
-    description: "Nous vous aidons à mettre en place une collecte de données continue tout au long de l'année. Cela double la force de vos réclamations, augmente les dépenses admissibles et prévient les problèmes lors des audits.",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+    title: "Coachs",
+    description: "Bénéficiez de l'accompagnement d'experts chevronnés — entrepreneurs, investisseurs et spécialistes — qui vous guident avec des conseils pratiques et concrets.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
     </svg>`,
-    time: "Continu"
+    color: "from-[#2DC3E9] to-[#1BA8CE]"
   },
   {
     number: "3",
-    title: "Optimisation & Stratégie",
-    description: "En utilisant notre expertise technique et fiscale, nous analysons vos informations pour maximiser la RS&DE, CDAE et autres crédits. Nous effectuons des simulations, repérons des subventions supplémentaires et préparons une documentation solide pour chaque réclamation.",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+    title: "Demande de Financement",
+    description: "Accédez à des ressources financières essentielles. Nous vous appuyons dans la préparation et le dépôt de vos demandes de financement et crédits d'impôt.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>`,
-    time: "Mensuel"
+    color: "from-[#FAC140] to-[#EAB130]"
   },
   {
     number: "4",
-    title: "Défense & Support Continu",
-    description: "Du dépôt aux audits, nous sommes à vos côtés. Notre bilan éprouvé (taux de réussite de 99,25%) signifie que nous défendons efficacement vos réclamations et fournissons des conseils toute l'année pour sécuriser vos résultats.",
-    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+    title: "Partenariat",
+    description: "Développez des collaborations stratégiques grâce à notre réseau de partenaires clés qui ouvrent des portes et créent des opportunités.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
     </svg>`,
-    time: "Toute l'année"
+    color: "from-[#2DC3E9] to-[#1BA8CE]"
+  },
+  {
+    number: "5",
+    title: "Événements",
+    description: "Participez à des événements exclusifs où vous rencontrez investisseurs, experts et entrepreneurs inspirants pour élargir votre horizon et votre réseau.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+    </svg>`,
+    color: "from-[#FAC140] to-[#EAB130]"
   }
 ];
 ---
@@ -44,41 +53,80 @@ const steps = [
     <div class="text-center mb-16">
       <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Comment Ça Fonctionne</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
-        De Zéro à Financé en 4 Étapes Simples
+        Nos 5 Piliers pour Accélérer votre Croissance
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Notre processus simplifié vous donne des résultats rapidement
+        Un accompagnement unique qui allie communauté, expertise et opportunités.
       </p>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-8">
-      {steps.map((step, index) => (
-        <div class="relative bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-[#FAC140] hover:shadow-xl transition-all duration-300 group">
-          {/* Step number badge */}
-          <div class="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#FAC140] to-[#EAB130] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">
-            {step.number}
-          </div>
-          
-          {/* Icon and timing */}
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-14 h-14 bg-[#FAC140]/10 rounded-lg flex items-center justify-center text-[#FAC140] group-hover:scale-110 transition-transform duration-300">
-              <Fragment set:html={step.icon} />
+    {/* 5 Pillars Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {/* First row - 3 cards */}
+      {pillars.slice(0, 3).map((pillar, index) => (
+        <div class="group relative">
+          <div class="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent overflow-hidden">
+            {/* Background gradient on hover */}
+            <div class={`absolute inset-0 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+            
+            {/* Number badge */}
+            <div class={`absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br ${pillar.color} rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+              {pillar.number}
             </div>
-            <span class="text-xs font-bold text-[#FAC140] bg-[#FAC140]/10 px-3 py-1 rounded-full uppercase tracking-wide">
-              {step.time}
-            </span>
+            
+            {/* Icon */}
+            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${pillar.color} bg-opacity-10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div class={`text-transparent bg-clip-text bg-gradient-to-br ${pillar.color}`}>
+                <Fragment set:html={pillar.icon} />
+              </div>
+            </div>
+            
+            {/* Content */}
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#FAC140] transition-colors">
+              {pillar.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {pillar.description}
+            </p>
+            
+            {/* Bottom accent line */}
+            <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
           </div>
-          
-          {/* Content */}
-          <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#FAC140] transition-colors">
-            {step.title}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {step.description}
-          </p>
-          
-          {/* Decorative corner */}
-          <div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent via-[#FAC140]/5 to-[#FAC140]/10 rounded-tl-lg"></div>
+        </div>
+      ))}
+    </div>
+    
+    {/* Second row - 2 cards centered */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {pillars.slice(3, 5).map((pillar, index) => (
+        <div class="group relative">
+          <div class="h-full bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent overflow-hidden">
+            {/* Background gradient on hover */}
+            <div class={`absolute inset-0 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+            
+            {/* Number badge */}
+            <div class={`absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br ${pillar.color} rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+              {pillar.number}
+            </div>
+            
+            {/* Icon */}
+            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${pillar.color} bg-opacity-10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div class={`text-transparent bg-clip-text bg-gradient-to-br ${pillar.color}`}>
+                <Fragment set:html={pillar.icon} />
+              </div>
+            </div>
+            
+            {/* Content */}
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#FAC140] transition-colors">
+              {pillar.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {pillar.description}
+            </p>
+            
+            {/* Bottom accent line */}
+            <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
+          </div>
         </div>
       ))}
     </div>
