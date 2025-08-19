@@ -81,7 +81,7 @@ const stats = [
           // Calculate horizontal translation based on scroll progress
           // Move testimonials left as user scrolls down
           const maxTranslate = testimonialTrack.scrollWidth - window.innerWidth;
-          const translateX = -scrollProgress * maxTranslate * 0.3; // 0.3 for smoother movement
+          const translateX = -scrollProgress * maxTranslate * 1.8; // 1.8 for very fast movement, maximum cards visible
           
           testimonialTrack.style.transform = `translateX(${translateX}px)`;
           isScrolling = false;
@@ -89,19 +89,10 @@ const stats = [
       }
     }
     
+    // Add scroll listener for all devices
     window.addEventListener('scroll', updateTestimonialPosition);
     window.addEventListener('resize', updateTestimonialPosition);
-    
-    // Initial position
-    updateTestimonialPosition();
-    
-    // Enable touch scrolling on mobile as backup
-    if (window.innerWidth < 640) {
-      testimonialTrack.style.scrollSnapType = 'x mandatory';
-      testimonialTrack.querySelectorAll('.flex-shrink-0').forEach(card => {
-        (card as HTMLElement).style.scrollSnapAlign = 'start';
-      });
-    }
+    updateTestimonialPosition(); // Initial position
   }
 </script>
 
@@ -123,18 +114,19 @@ const stats = [
     </div>
     
     {/* Testimonial Carousel - Mobile Optimized */}
-    <div class="relative overflow-hidden -mx-4 mt-12">
-      {/* Fade edges - smaller on mobile */}
-      <div class="absolute left-0 top-0 bottom-0 w-4 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div class="absolute right-0 top-0 bottom-0 w-4 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+    <div class="relative mt-12 overflow-hidden">
+      {/* Fade edges on all devices */}
+      <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
       
       {/* Testimonial container with horizontal scroll on mobile */}
-      <div class="py-6 sm:py-8">
-        <div class="testimonial-track flex gap-3 sm:gap-6 px-3 sm:px-8 pb-2 overflow-x-auto sm:overflow-visible scrollbar-hide">
+      <div class="py-6 sm:py-8 overflow-x-auto sm:overflow-visible">
+        <div class="testimonial-track flex gap-4 sm:gap-6 px-4 sm:px-8 pb-2 sm:overflow-visible" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
           {/* Show testimonials once on mobile, duplicate on desktop for scroll effect */}
           {testimonials.map((testimonial) => (
             <div 
-              class="flex-shrink-0 w-[38vw] sm:w-80 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              class="flex-shrink-0 w-[40vw] sm:w-56 bg-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              style="scroll-snap-align: start;"
             >
               <div class="flex flex-col h-full p-3 sm:p-6">
                 <div class="flex items-start gap-1 sm:gap-3 mb-2 sm:mb-3">
@@ -163,7 +155,7 @@ const stats = [
           <div class="hidden sm:flex gap-6">
             {testimonials.map((testimonial) => (
               <div 
-                class="flex-shrink-0 w-80 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                class="flex-shrink-0 w-56 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div class="flex flex-col h-full p-6">
                   <div class="flex items-start gap-3 mb-3">
@@ -190,11 +182,6 @@ const stats = [
             ))}
           </div>
         </div>
-      </div>
-      
-      {/* Mobile scroll indicator */}
-      <div class="flex justify-center gap-1 mt-4 sm:hidden">
-        <span class="text-xs text-gray-400">Glissez pour voir plus →</span>
       </div>
     </div>
     
