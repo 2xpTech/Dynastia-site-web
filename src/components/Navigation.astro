@@ -1,6 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL || '';
-const logoPath = base ? `${base}assetlogo.svg` : '/assetlogo.svg';
+const logoPath = base.endsWith('/') ? `${base}assetlogo.svg` : `${base}/assetlogo.svg`;
 const homeUrl = base || '/';
 ---
 
