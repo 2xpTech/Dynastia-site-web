@@ -4,15 +4,15 @@ const base = import.meta.env.BASE_URL || '';
 const coaches = [
   {
     name: "Alexandre Émond",
-    title: "Expert en financement technologique et crédits d'impôt",
-    description: "Expert en financement technologique et crédits d'impôt",
+    title: "Entrepreneur, expert en financement technologique et crédits d'impôt",
+    description: "Entrepreneur, expert en financement technologique et crédits d'impôt",
     initials: "AE",
     image: base ? `${base}/images/coaches/alexandre-emond.jpeg` : "/images/coaches/alexandre-emond.jpeg"
   },
   {
     name: "Steve Moisan",
-    title: "Spécialiste senior en gestion de subventions et crédits RS&DE",
-    description: "Spécialiste senior en gestion de subventions et crédits RS&DE",
+    title: "Coach, entrepreneur, spécialiste senior en gestion de subventions et crédits RS&DE",
+    description: "Coach, entrepreneur, spécialiste senior en gestion de subventions et crédits RS&DE",
     initials: "SM",
     image: base ? `${base}/images/coaches/Steve-moisan.jpeg` : "/images/coaches/Steve-moisan.jpeg"
   },
@@ -46,19 +46,66 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
 
 <section id="programs" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto">
-    <div class="text-left mb-10 sm:mb-12">
+    <div class="text-center mb-10 sm:mb-12">
       <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Nos Coachs</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
         Une équipe entière dédiée à votre succès
       </h2>
-      <p class="text-xl text-gray-600 max-w-4xl">
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
         Nos coachs mettent plus de 20 ans d'expérience au service des PME<br />
         pour vous offrir des solutions concrètes et accélérer votre croissance.
       </p>
     </div>
     
-    {/* Scrollable container */}
-    <div class="relative">
+    {/* Desktop: 3 on top, 2 on bottom. Mobile: Scrollable */}
+    <div class="hidden lg:block">
+      {/* First row - 3 coaches */}
+      <div class="grid grid-cols-3 gap-6 mb-6">
+        {coaches.slice(0, 3).map((coach) => (
+          <div class="flex flex-col">
+            {/* Full card image */}
+            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-80 group">
+              <img 
+                src={coach.image} 
+                alt={coach.name}
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
+            
+            {/* Coach info - floating below card */}
+            <div class="mt-3 text-center">
+              <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
+              <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Second row - 2 coaches centered */}
+      <div class="flex justify-center gap-6">
+        {coaches.slice(3, 5).map((coach) => (
+          <div class="flex flex-col max-w-sm">
+            {/* Full card image */}
+            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-80 group">
+              <img 
+                src={coach.image} 
+                alt={coach.name}
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
+            
+            {/* Coach info - floating below card */}
+            <div class="mt-3 text-center">
+              <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
+              <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    {/* Mobile/Tablet: Scrollable container */}
+    <div class="lg:hidden relative">
       <div id="coaches-container" class="overflow-x-auto scrollbar-hide pb-4">
         <div class="flex gap-6 w-max">
           {coaches.map((coach) => (
@@ -73,7 +120,7 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
               </div>
               
               {/* Coach info - floating below card */}
-              <div class="mt-3 text-left">
+              <div class="mt-3 text-center">
                 <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
                 <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
               </div>
@@ -82,7 +129,7 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
         </div>
       </div>
       
-      {/* Pagination lines */}
+      {/* Pagination lines for mobile */}
       <div class="flex justify-center gap-3 mt-6">
         {[...Array(totalPages)].map((_, index) => (
           <button 
