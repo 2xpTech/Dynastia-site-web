@@ -57,14 +57,13 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
       </p>
     </div>
     
-    {/* Desktop: 3 on top, 2 on bottom. Mobile: Scrollable */}
+    {/* Desktop: All 5 coaches in one row. Mobile: Scrollable */}
     <div class="hidden lg:block">
-      {/* First row - 3 coaches */}
-      <div class="grid grid-cols-3 gap-6 mb-6">
-        {coaches.slice(0, 3).map((coach) => (
+      <div class="grid grid-cols-5 gap-4">
+        {coaches.map((coach) => (
           <div class="flex flex-col">
-            {/* Full card image */}
-            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-80 group">
+            {/* Full card image - consistent size */}
+            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-64 group">
               <img 
                 src={coach.image} 
                 alt={coach.name}
@@ -72,32 +71,10 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
               />
             </div>
             
-            {/* Coach info - floating below card */}
-            <div class="mt-3 text-center">
-              <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
-              <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      {/* Second row - 2 coaches centered */}
-      <div class="flex justify-center gap-6">
-        {coaches.slice(3, 5).map((coach) => (
-          <div class="flex flex-col max-w-sm">
-            {/* Full card image */}
-            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-80 group">
-              <img 
-                src={coach.image} 
-                alt={coach.name}
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-              />
-            </div>
-            
-            {/* Coach info - floating below card */}
-            <div class="mt-3 text-center">
-              <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
-              <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
+            {/* Coach info - left aligned */}
+            <div class="mt-3 text-left">
+              <h3 class="text-base font-bold text-gray-900">{coach.name}</h3>
+              <p class="text-xs text-gray-600 leading-tight">{coach.title}</p>
             </div>
           </div>
         ))}
@@ -119,10 +96,10 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
                 />
               </div>
               
-              {/* Coach info - floating below card */}
-              <div class="mt-3 text-center">
+              {/* Coach info - left aligned for mobile too */}
+              <div class="mt-3 text-left">
                 <h3 class="text-lg font-bold text-gray-900">{coach.name}</h3>
-                <p class="text-sm text-gray-900 font-medium">{coach.title}</p>
+                <p class="text-sm text-gray-600">{coach.title}</p>
               </div>
             </div>
           ))}
