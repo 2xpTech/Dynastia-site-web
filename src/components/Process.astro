@@ -49,7 +49,7 @@ const pillars = [
 ---
 
 <section id="process" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
     <div class="text-center mb-10 sm:mb-12">
       <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Comment Ça Fonctionne</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
@@ -61,7 +61,7 @@ const pillars = [
     </div>
     
     {/* Stacked Accordion Pillars */}
-    <div class="max-w-4xl mx-auto space-y-0 relative" id="pillars-container">
+    <div class="max-w-6xl mx-auto space-y-0 relative" id="pillars-container">
       {pillars.map((pillar, index) => (
         <div 
           class="pillar-item group relative border-b border-gray-200 last:border-b-0 overflow-hidden transition-all duration-700"
@@ -70,15 +70,15 @@ const pillars = [
         >
           <div class="cursor-pointer">
             {/* Main row - always visible */}
-            <div class="flex items-center justify-between py-6 px-4 sm:px-8">
-              <div class="flex items-center gap-4 sm:gap-6">
+            <div class="flex items-center justify-between py-6 px-4 sm:px-8 lg:px-12">
+              <div class="flex items-center gap-4 sm:gap-6 lg:gap-8">
                 {/* Number */}
-                <span class={`pillar-number text-3xl sm:text-5xl font-black ${pillar.color === 'bg-[#FAC140]' ? 'text-[#FAC140]' : 'text-[#2DC3E9]'} opacity-30 transition-opacity duration-500`}>
+                <span class={`pillar-number text-3xl sm:text-5xl lg:text-6xl font-black ${pillar.color === 'bg-[#FAC140]' ? 'text-[#FAC140]' : 'text-[#2DC3E9]'} opacity-30 transition-opacity duration-500`}>
                   {pillar.number}
                 </span>
                 
                 {/* Title */}
-                <h3 class="text-lg sm:text-2xl font-bold text-gray-900 transition-colors duration-300">
+                <h3 class="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-900 transition-colors duration-300">
                   {pillar.title}
                 </h3>
               </div>
@@ -91,8 +91,8 @@ const pillars = [
             
             {/* Expandable description */}
             <div class="pillar-content max-h-0 transition-all duration-700 ease-in-out overflow-hidden">
-              <div class="px-4 sm:px-8 pb-6 pl-16 sm:pl-24">
-                <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <div class="px-4 sm:px-8 lg:px-12 pb-6 pl-16 sm:pl-24 lg:pl-32">
+                <p class="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
