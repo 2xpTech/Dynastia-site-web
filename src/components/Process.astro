@@ -51,9 +51,9 @@ const pillars = [
 <section id="process" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
   <div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
     <div class="text-center mb-10 sm:mb-12">
-      <span class="text-[#FAC140] font-bold text-base uppercase tracking-wide">Comment Ça Fonctionne</span>
+      <span class="text-[#FAC140] font-bold text-base tracking-wide">Comment ça fonctionne</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
-        Nos 5 Piliers pour Accélérer votre Croissance
+        Nos 5 piliers pour accélérer votre croissance
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Un accompagnement unique qui allie communauté, expertise et opportunités.
@@ -195,25 +195,44 @@ const pillars = [
       }
     }
     
-    // Only enable scroll animations on touch devices or smaller screens
+    // Only enable scroll animations on mobile/touch devices
     function setupScrollAnimation() {
-      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const isSmallScreen = window.innerWidth < 1024; // lg breakpoint
+      // Better touch detection that excludes devices with both touch and mouse (like Windows touchscreen laptops)
+      const isMobileTouch = ('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth < 1024;
+      const isSmallScreen = window.innerWidth < 768; // Use smaller breakpoint for mobile only
       
-      if (isTouchDevice || isSmallScreen) {
+      if (isMobileTouch || isSmallScreen) {
+        // Mobile/tablet: Use scroll-based activation
         window.addEventListener('scroll', handleScrollActivation);
         window.addEventListener('resize', handleScrollActivation);
         handleScrollActivation(); // Initial check
         
-        // Also keep hover functionality for desktop with mouse
-        if (!isTouchDevice && !isSmallScreen && pillarsContainer) {
-          pillarsContainer.classList.add('hover-enabled');
+        // Remove hover class for mobile
+        if (pillarsContainer) {
+          pillarsContainer.classList.remove('hover-enabled');
         }
       } else {
-        // On desktop, restore hover-only behavior
+        // Desktop (including Windows): Use hover-only behavior
         window.removeEventListener('scroll', handleScrollActivation);
         if (pillarsContainer) {
           pillarsContainer.classList.add('hover-enabled');
+          // Reset any active states from scroll
+          pillarItems.forEach(item => {
+            const pillarElement = item as HTMLElement;
+            pillarElement.classList.remove('bg-white');
+            const pillarNumber = item.querySelector('.pillar-number') as HTMLElement;
+            const pillarIcon = item.querySelector('.pillar-icon') as HTMLElement;
+            const pillarContent = item.querySelector('.pillar-content') as HTMLElement;
+            const pillarAccent = item.querySelector('.pillar-accent') as HTMLElement;
+            
+            if (pillarNumber) pillarNumber.style.opacity = '0.3';
+            if (pillarIcon) {
+              pillarIcon.style.opacity = '0';
+              pillarIcon.style.transform = 'translateX(1rem)';
+            }
+            if (pillarContent) pillarContent.style.maxHeight = '0';
+            if (pillarAccent) pillarAccent.style.transform = 'scaleY(0)';
+          });
         }
       }
     }
