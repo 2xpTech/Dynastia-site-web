@@ -43,6 +43,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .gradient-bg {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Ensure all buttons use Inter font */
+button,
+[type='button'],
+[type='submit'],
+a[class*='btn'],
+a[class*='button'] {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
 }
 
 .card-shadow {
