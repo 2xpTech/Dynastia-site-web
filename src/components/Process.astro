@@ -73,7 +73,7 @@ const pillars = [
             <div class="flex items-center justify-between py-6 px-4 sm:px-8 lg:px-12">
               <div class="flex items-center gap-4 sm:gap-6 lg:gap-8">
                 {/* Number */}
-                <span class={`pillar-number text-3xl sm:text-5xl lg:text-6xl font-black ${pillar.color === 'bg-[#FAC140]' ? 'text-[#FAC140]' : 'text-[#2DC3E9]'} opacity-30 transition-opacity duration-500`}>
+                <span class={`pillar-number text-2xl sm:text-4xl lg:text-5xl font-['Inter'] font-light ${pillar.color === 'bg-[#FAC140]' ? 'text-[#FAC140]' : 'text-[#2DC3E9]'} opacity-20 transition-opacity duration-500`}>
                   {pillar.number}
                 </span>
                 
@@ -148,7 +148,7 @@ const pillars = [
         } else {
           // Deactivate this pillar
           pillarElement.classList.remove('bg-white');
-          if (pillarNumber) pillarNumber.style.opacity = '0.3';
+          if (pillarNumber) pillarNumber.style.opacity = '0.2';
           if (pillarIcon) {
             pillarIcon.style.opacity = '0';
             pillarIcon.style.transform = 'translateX(1rem)';
@@ -184,7 +184,7 @@ const pillars = [
           const pillarContent = item.querySelector('.pillar-content') as HTMLElement;
           const pillarAccent = item.querySelector('.pillar-accent') as HTMLElement;
           
-          if (pillarNumber) pillarNumber.style.opacity = '0.3';
+          if (pillarNumber) pillarNumber.style.opacity = '0.2';
           if (pillarIcon) {
             pillarIcon.style.opacity = '0';
             pillarIcon.style.transform = 'translateX(1rem)';
@@ -225,7 +225,7 @@ const pillars = [
             const pillarContent = item.querySelector('.pillar-content') as HTMLElement;
             const pillarAccent = item.querySelector('.pillar-accent') as HTMLElement;
             
-            if (pillarNumber) pillarNumber.style.opacity = '0.3';
+            if (pillarNumber) pillarNumber.style.opacity = '0.2';
             if (pillarIcon) {
               pillarIcon.style.opacity = '0';
               pillarIcon.style.transform = 'translateX(1rem)';
