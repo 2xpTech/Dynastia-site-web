@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL || '';
+const alexanderImage = base ? `${base}/images/coaches/alexandre-emond.jpeg` : "/images/coaches/alexandre-emond.jpeg";
 ---
 
 <section id="contact" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-white">
@@ -14,77 +16,77 @@
     </div>
     
     <div class="grid lg:grid-cols-2 gap-12">
-      <div class="bg-gradient-to-br from-purple-50 to-emerald-50 rounded-2xl p-8">
+      <div class="bg-gradient-to-br from-purple-50 to-emerald-50 rounded-2xl p-4">
         <h3 class="text-2xl font-bold mb-2">Contactez-nous</h3>
-        <p class="text-gray-600 mb-8">Remplissez le formulaire et nous vous contacterons dans les 24 heures</p>
+        <p class="text-gray-600 mb-4 text-sm">Remplissez le formulaire et nous vous contacterons dans les 24 heures</p>
         
         <form 
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
-          class="space-y-6"
+          class="space-y-4"
         >
-          <div class="grid sm:grid-cols-2 gap-6">
+          <div class="grid sm:grid-cols-2 gap-4">
             <div>
-              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Prénom</label>
+              <label for="firstName" class="block text-xs font-medium text-gray-700 mb-1">Prénom</label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 placeholder="Jean"
               />
             </div>
             <div>
-              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nom de Famille</label>
+              <label for="lastName" class="block text-xs font-medium text-gray-700 mb-1">Nom de Famille</label>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
                 required
-                class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+                class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
                 placeholder="Tremblay"
               />
             </div>
           </div>
           
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Courriel Professionnel</label>
+            <label for="email" class="block text-xs font-medium text-gray-700 mb-1">Courriel Professionnel</label>
             <input
               type="email"
               id="email"
               name="email"
               required
-              class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+              class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
               placeholder="jean@entreprise.com"
             />
           </div>
           
           <div>
-            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Entreprise</label>
+            <label for="company" class="block text-xs font-medium text-gray-700 mb-1">Entreprise</label>
             <input
               type="text"
               id="company"
               name="company"
-              class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+              class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
               placeholder="Votre Entreprise Inc."
             />
           </div>
           
           <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Comment pouvons-nous vous aider?</label>
+            <label for="message" class="block text-xs font-medium text-gray-700 mb-1">Comment pouvons-nous vous aider?</label>
             <textarea
               id="message"
               name="message"
-              rows="4"
-              class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all resize-none"
+              rows="3"
+              class="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all resize-none"
               placeholder="Parlez-nous de votre entreprise et de vos besoins de financement..."
             ></textarea>
           </div>
           
           <button
             type="submit"
-            class="w-full gradient-bg text-white font-semibold px-8 py-4 rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+            class="w-full gradient-bg text-white font-semibold px-6 py-3 text-sm rounded-xl border border-gray-400 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
           >
             Envoyer le Message
           </button>
@@ -96,17 +98,73 @@
       </div>
       
       <div class="bg-gray-50 rounded-2xl p-4 overflow-hidden h-full flex flex-col">
-        <h3 class="text-2xl font-bold mb-4">Discutons ensemble</h3>
-        <iframe
-          src="https://outlook.office.com/bookwithme/user/844dc7c87d674607aae5e96386d0d1a5%402xp.tech?anonymous&ismsaljsauthenabled=true"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          class="flex-1 min-h-[550px] rounded-xl"
-          style="transform: scale(1); transform-origin: top center;"
-        ></iframe>
+        <!-- Alexander's section -->
+        <div id="expert-section" class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col justify-center">
+          <div class="relative mb-6">
+            <img 
+              src={alexanderImage} 
+              alt="Alexandre Émond" 
+              class="w-full h-80 object-cover rounded-lg"
+            />
+            <div class="absolute -bottom-3 -right-3 bg-green-500 text-white rounded-full p-3 shadow-lg">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3 class="text-2xl font-bold mb-6">Alexandre Émond</h3>
+            <button
+              id="show-calendar"
+              class="gradient-bg text-white font-bold px-8 py-4 text-lg rounded-xl border border-gray-400 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 w-full"
+            >
+              Parler à nos experts!
+            </button>
+          </div>
+        </div>
+        
+        <!-- Calendar section (initially hidden) -->
+        <div id="calendar-section" class="hidden flex-1 flex flex-col">
+          <h3 class="text-2xl font-bold mb-3">Discutons ensemble</h3>
+          <iframe
+            src="https://outlook.office.com/bookwithme/user/844dc7c87d674607aae5e96386d0d1a5%402xp.tech?anonymous&ismsaljsauthenabled=true"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            class="flex-1 min-h-[500px] rounded-xl"
+            style="transform: scale(1); transform-origin: top center;"
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const showCalendarBtn = document.getElementById('show-calendar');
+    const expertSection = document.getElementById('expert-section');
+    const calendarSection = document.getElementById('calendar-section');
+    
+    if (showCalendarBtn && expertSection && calendarSection) {
+      showCalendarBtn.addEventListener('click', () => {
+        // Hide the expert section with fade out
+        expertSection.style.transition = 'opacity 0.3s ease-out';
+        expertSection.style.opacity = '0';
+        
+        setTimeout(() => {
+          expertSection.classList.add('hidden');
+          // Show the calendar section with fade in
+          calendarSection.classList.remove('hidden');
+          calendarSection.style.opacity = '0';
+          calendarSection.style.transition = 'opacity 0.3s ease-in';
+          
+          setTimeout(() => {
+            calendarSection.style.opacity = '1';
+          }, 10);
+        }, 300);
+      });
+    }
+  });
+</script>
 
