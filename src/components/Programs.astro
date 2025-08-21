@@ -50,9 +50,9 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
       </p>
     </div>
     
-    {/* Desktop: All 5 coaches in one row. Mobile: Scrollable */}
+    {/* Desktop: All 4 coaches in one row. Mobile: Scrollable */}
     <div class="hidden lg:block">
-      <div class="grid grid-cols-5 gap-4">
+      <div class="grid grid-cols-4 gap-6 max-w-6xl mx-auto">
         {coaches.map((coach) => (
           <div class="flex flex-col">
             {/* Full card image - consistent size */}
