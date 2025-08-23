@@ -74,7 +74,7 @@ const services = [
         return (
           <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-lg sm:rounded-xl p-4 sm:p-6 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden">
             {/* Background decoration */}
-            <div class={`absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-700 ${isYellow ? 'bg-[#FAC140]' : 'bg-[#2DC3E9]'}`}></div>
+            <div class={`absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-700 ${isYellow ? 'bg-[#FAC140]' : 'bg-[#4AC6C2]'}`}></div>
             
             {/* Professional icon */}
             <div class="w-10 h-10 sm:w-14 sm:h-14 mb-3 sm:mb-5 bg-gray-100 rounded-lg sm:rounded-xl flex items-center justify-center text-gray-600 group-hover:bg-gray-50 transition-all duration-300">
@@ -85,10 +85,10 @@ const services = [
             <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-2 sm:mb-4">{service.description}</p>
             
             {/* Interactive hover element */}
-            <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${isYellow ? 'from-[#FAC140] to-[#EAB130]' : 'from-[#2DC3E9] to-[#1BA8CE]'} transform translate-y-full group-hover:translate-y-0 transition-transform duration-300`}></div>
+            <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${isYellow ? 'from-[#FAC140] to-[#EAB130]' : 'from-[#4AC6C2] to-[#3BA5A1]'} transform translate-y-full group-hover:translate-y-0 transition-transform duration-300`}></div>
             
             {/* Corner accent */}
-            <div class={`absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 ${isYellow ? 'bg-[#FAC140]' : 'bg-[#2DC3E9]'} opacity-5 rotate-45 group-hover:rotate-90 transition-all duration-500`}></div>
+            <div class={`absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 ${isYellow ? 'bg-[#FAC140]' : 'bg-[#4AC6C2]'} opacity-5 rotate-45 group-hover:rotate-90 transition-all duration-500`}></div>
           </div>
         )
       })}
