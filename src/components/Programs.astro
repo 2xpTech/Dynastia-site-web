@@ -37,8 +37,18 @@ const coachesPerPage = 4;
 const totalPages = Math.ceil(coaches.length / coachesPerPage);
 ---
 
-<section id="programs" class="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
-  <div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+<section id="programs" class="relative py-8 sm:py-10 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-[#FAC140]/10 via-white to-[#4AC6C2]/10">
+  <!-- Wavy gradient layers -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -inset-[100%] animate-wave opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#FAC140]/40 via-transparent to-transparent"></div>
+    </div>
+    <div class="absolute -inset-[100%] animate-wave-reverse opacity-30" style="animation-delay: 1s;">
+      <div class="absolute inset-0 bg-gradient-to-tl from-[#4AC6C2]/40 via-transparent to-transparent"></div>
+    </div>
+  </div>
+  
+  <div class="relative max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
     <div class="text-center mb-10 sm:mb-12">
       <span class="text-[#FAC140] font-bold text-base tracking-wide">Nos coachs</span>
       <h2 class="text-3xl sm:text-4xl font-black mt-2 mb-4 text-gray-900">
@@ -117,9 +127,9 @@ const totalPages = Math.ceil(coaches.length / coachesPerPage);
     <div class="mt-10 sm:mt-12 text-center">
       <a 
         href="#contact" 
-        class="gradient-bg text-white font-semibold px-8 py-4 rounded-md border border-gray-400 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block"
+        class="bg-white text-gray-900 font-['Inter'] font-semibold px-8 py-4 text-base rounded-md border-2 border-gray-300 hover:border-[#4AC6C2]/50 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200 inline-block"
       >
-        Rejoindre la cohorte →
+        Nous rencontrer
       </a>
     </div>
   </div>
