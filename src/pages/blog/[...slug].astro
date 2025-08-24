@@ -1,19 +1,18 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
-import SEO from '../../components/SEO.astro';
 import '../../styles/global.css';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
   return blogEntries.map(entry => ({
     params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
-const { slug } = Astro.params;
-const entry = await getEntryBySlug('blog', slug as string);
+const { entry } = Astro.props;
 
 if (!entry || entry.data.draft) {
   return Astro.redirect('/blog');
@@ -23,7 +22,7 @@ const { Content } = await entry.render();
 const { title, description, pubDate, updatedDate, coverImage, coverAlt, tags } = entry.data;
 
 const siteUrl = Astro.site || 'https://dynast-ia.org';
-const canonicalURL = new URL(`/blog/${slug}`, siteUrl).toString();
+const canonicalURL = new URL(`/blog/${entry.slug}`, siteUrl).toString();
 const logoPath = '/Dynastia-side.svg';
 
 const jsonLd = {
@@ -77,7 +76,7 @@ const jsonLd = {
       <header class="mb-12">
         {tags && tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mb-6">
-            {tags.map(tag => (
+            {tags.map((tag: string) => (
               <span class="text-sm font-semibold text-[#4AC6C2] bg-[#4AC6C2]/10 px-4 py-1.5 rounded-full">
                 {tag}
               </span>
