@@ -1,0 +1,37 @@
+---
+import BaseLayoutSEO from '../layouts/BaseLayoutSEO.astro';
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+
+// Page-specific SEO data
+const pageTitle = "À propos de Dynastia | Accélérateur de startups innovantes";
+const pageDescription = "Découvrez l'histoire et la mission de Dynastia, l'accélérateur de référence pour les startups innovantes au Québec. Notre équipe, nos valeurs et notre impact.";
+const pageImage = "/assets/about-hero.jpg"; // This would be your about page hero image
+---
+
+<BaseLayoutSEO 
+  title={pageTitle}
+  description={pageDescription}
+  image={pageImage}
+>
+  <Navigation />
+  
+  <main class="min-h-screen bg-white pt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 class="text-4xl font-bold mb-8">À propos de Dynastia</h1>
+      
+      <p class="text-lg text-gray-700 mb-6">
+        Dynastia est l'accélérateur de référence pour les startups innovantes au Québec.
+        Depuis notre création, nous avons accompagné plus de 100 entreprises dans leur
+        croissance et leur développement.
+      </p>
+      
+      <!-- Example content showing how clean it is to use the SEO component -->
+      <p class="text-gray-600">
+        Cette page utilise le composant SEO réutilisable. Toutes les balises meta,
+        Open Graph et Twitter sont automatiquement générées à partir des props
+        passées au BaseLayoutSEO.
+      </p>
+    </div>
+  </main>
+</BaseLayoutSEO>

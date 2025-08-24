@@ -6,8 +6,10 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  // For custom domain deployment
+  // REQUIRED for RSS feed generation
+  // This should be your production URL
   site: 'https://dynast-ia.org',
+  
   // Remove base when using custom domain
   // base: '/Dynastia-site-web',
   
