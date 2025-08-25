@@ -6,8 +6,9 @@ import BlogCard from '../../components/BlogCard.astro';
 import Footer from '../../components/Footer.astro';
 import '../../styles/global.css';
 
-// Get all blog posts, filter out drafts, sort by date
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+// Get all blog posts, filter out drafts in production only, sort by date
+const isDevelopment = import.meta.env.DEV;
+const allPosts = await getCollection('blog', ({ data }) => isDevelopment ? true : !data.draft);
 const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Pagination

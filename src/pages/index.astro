@@ -12,8 +12,9 @@ import BlogCard from '../components/BlogCard.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-// Get 3 most recent non-draft blog posts
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+// Get 3 most recent blog posts (show drafts in development)
+const isDevelopment = import.meta.env.DEV;
+const allPosts = await getCollection('blog', ({ data }) => isDevelopment ? true : !data.draft);
 const recentPosts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
