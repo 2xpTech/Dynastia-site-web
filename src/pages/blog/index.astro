@@ -27,7 +27,6 @@ const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
 // SEO
 const pageTitle = currentPage > 1 ? `Blog - Page ${currentPage} | Dynastia` : 'Blog | Dynastia';
 const pageDescription = "Découvrez nos derniers articles sur l'entrepreneuriat, l'innovation et les stratégies de croissance pour startups.";
-const logoPath = '/Dynastia-side.svg';
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -35,7 +34,7 @@ const logoPath = '/Dynastia-side.svg';
   
   <main class="min-h-screen bg-white pt-24">
     <!-- Hero Section -->
-    <div class="bg-gradient-to-b from-gray-50 to-white pb-12">
+    <div class="bg-white pb-12">
       <div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12">
         <div class="text-center">
           <span class="inline-block px-4 py-1.5 bg-[#FAC140]/10 text-[#FAC140] font-bold text-sm rounded-full mb-4">Blog</span>

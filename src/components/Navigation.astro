@@ -1,6 +1,14 @@
 ---
 const logoPath = '/Dynastia-side.svg';
-const homeUrl = '/';
+
+// Determine if we're on the homepage or not
+const currentPath = Astro.url.pathname;
+const isHomepage = currentPath === '/';
+
+// Create proper navigation links based on current page
+const getNavLink = (hash: string) => {
+  return isHomepage ? hash : `/${hash}`;
+};
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
@@ -17,12 +25,12 @@ const homeUrl = '/';
       </div>
       
       <div class="hidden md:flex items-center gap-8">
-        <a href="#what-we-do" class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Services</a>
-        <a href="#programs" class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Coachs</a>
-        <a href="#impact" class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Résultats</a>
-        <a href="#process" class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Processus</a>
+        <a href={getNavLink('#what-we-do')} class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Services</a>
+        <a href={getNavLink('#programs')} class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Coachs</a>
+        <a href={getNavLink('#impact')} class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Résultats</a>
+        <a href={getNavLink('#process')} class="font-['Inter'] text-gray-600 hover:text-[#FAC140] transition-colors">Processus</a>
         <a 
-          href="#booking" 
+          href={getNavLink('#booking')} 
           class="gradient-bg text-white font-semibold px-6 py-2 rounded-lg border border-gray-400 hover:shadow-lg transition-all"
         >
           Consultation
@@ -43,11 +51,11 @@ const homeUrl = '/';
   {/* Mobile menu */}
   <div id="mobile-menu" class="md:hidden hidden">
     <div class="px-4 pt-2 pb-4 space-y-2 bg-white border-b border-gray-100">
-      <a href="#what-we-do" class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Services</a>
-      <a href="#programs" class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Coachs</a>
-      <a href="#impact" class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Résultats</a>
-      <a href="#process" class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Processus</a>
-      <a href="#booking" class="block gradient-bg text-white font-semibold px-3 py-2 rounded-lg border border-gray-400 text-center">
+      <a href={getNavLink('#what-we-do')} class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Services</a>
+      <a href={getNavLink('#programs')} class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Coachs</a>
+      <a href={getNavLink('#impact')} class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Résultats</a>
+      <a href={getNavLink('#process')} class="block px-3 py-2 font-['Inter'] text-gray-600 hover:text-[#FAC140] hover:bg-gray-50 rounded-lg transition-colors">Processus</a>
+      <a href={getNavLink('#booking')} class="block gradient-bg text-white font-semibold px-3 py-2 rounded-lg border border-gray-400 text-center">
         Consultation
       </a>
     </div>
