@@ -8,10 +8,15 @@ export interface Props {
 const { 
   title = "L'Accélérateur pour Propulser votre croissance",
   description = "L'incubateur IA leader au Québec aidant les entreprises à obtenir des subventions, naviguer les défis financiers et accélérer leur croissance grâce à des solutions de financement intelligentes.",
-  ogImage = "/og-default.png"
+  ogImage
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dynastia.ai');
+const siteURL = Astro.site || 'https://dynast-ia.org';
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+// Use absolute URL for og:image - fallback to the logo if no image is provided
+const absoluteOgImage = ogImage 
+  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteURL).toString())
+  : new URL('/Dynastia-side.svg', siteURL).toString();
 ---
 
 <!doctype html>
@@ -31,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dynastia
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:site_name" content="Dynastia" />
     <meta property="og:locale" content="en_CA" />
     
@@ -39,7 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://dynastia
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image" content={absoluteOgImage} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
