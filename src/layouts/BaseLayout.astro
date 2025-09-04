@@ -3,20 +3,22 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const { 
   title = "L'Accélérateur pour Propulser votre croissance",
   description = "L'incubateur IA leader au Québec aidant les entreprises à obtenir des subventions, naviguer les défis financiers et accélérer leur croissance grâce à des solutions de financement intelligentes.",
-  ogImage
+  ogImage,
+  ogImageAlt = "Dynastia - L'Accélérateur pour Propulser votre croissance"
 } = Astro.props;
 
 const siteURL = Astro.site || 'https://dynast-ia.org';
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
-// Use absolute URL for og:image - fallback to the PNG logo for better social media compatibility
+// Use absolute URL for og:image - fallback to the proper OG image
 const absoluteOgImage = ogImage 
   ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteURL).toString())
-  : new URL('/Dynastia.png', siteURL).toString();
+  : new URL('/og-images/default.png', siteURL).toString();
 ---
 
 <!doctype html>
@@ -39,7 +41,7 @@ const absoluteOgImage = ogImage
     <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Dynastia - L'Accélérateur pour Propulser votre croissance" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content="Dynastia" />
     <meta property="og:locale" content="en_CA" />
     
